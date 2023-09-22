@@ -1,0 +1,510 @@
+@media screen and (max-width: 768px) {
+    /* Estilos para pantallas más pequeñas (tabletas, dispositivos móviles) */
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+
+/*.titulo{
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    width: 70%;
+    font-size: 40px;
+    font-family: sans-serif;
+    font-weight: 600;
+    color:#50244b;
+    margin: 20px auto;
+    padding: 15px;
+    background-color:rgba(237, 57, 195, 0.39);
+}*/
+
+.titulo {
+    width: 500px;
+    /* Puedes ajustar el ancho según tus necesidades */
+    margin: 0 auto;
+    /* Esto centra horizontalmente la caja */
+    position: absolute;
+    /* Posicionamiento absoluto para poder usar top y left */
+    top: 13%;
+    /* Coloca la caja en la mitad superior de la página */
+    left: 50%;
+    /* Centra la caja horizontalmente */
+    transform: translate(-50%, -50%);
+    /* Centra verticalmente y horizontalmente */
+    background-color: #c3df5d56;
+    /* Cambia el color de fondo según tu preferencia */
+    padding: 30px;
+    /* Espacio interno para el contenido de la caja */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    /* Agrega una sombra si deseas */
+    border-radius: 13px;
+}
+
+:root {
+    --color-bg: linear-gradient(to top, #f23dda, #efd826);
+    --line-color: linear-gradient(to left top, #82ff86 20%, #144425, #104e1c);
+    --flower-center: radial-gradient(circle, #916a2e, #b46ed26b);
+    --leaf-color: radial-gradient(circle, #21e570, #0c7447);
+    /*color de las hojas del tallo*/
+    --petal-color: radial-gradient(circle, #ded7e3, #ffbb00);
+}
+
+body {
+    background-image: var(--color-bg);
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    overflow-y: scroll;
+}
+
+
+@media screen and (max-width: 798px) {
+    body {
+        align-items: center;
+    }
+}
+
+.flower_wrapper {
+    position: absolute;
+    left: 50%;
+    bottom: 2vmin;
+    animation: moving-flower-1 4s linear infinite;
+}
+
+.flower_stem {
+    width: 2vmin;
+    height: 65vmin;
+    background-image: var(--line-color);
+    border-radius: 4vmin;
+    animation-delay: 0.3s;
+}
+
+.flower_center {
+    position: absolute;
+    top: 0vmin;
+    left: 50%;
+    z-index: 5;
+    transform: translateX(-50%) rotate(-10deg);
+    width: 20vmin;
+    height: 20vmin;
+    border-radius: 50%;
+    background: var(--flower-center);
+    animation: open-flower-middle 8s 0.9s backwards;
+    /*middle 8s, es el tiempo en el que demora en aparecer el centro de la flor*/
+}
+
+.flower_petal {
+    position: absolute;
+    left: 50%;
+    z-index: 3;
+    bottom: 55vmin;
+    transform: translateX(-50%);
+    width: 7vmin;
+    height: 17vmin;
+    height: 20vmin;
+    background: var(--petal-color);
+    clip-path: ellipse(50% 50% at 50% 50%);
+    transform-origin: center bottom;
+    animation: open-flower 4s 1s backwards;
+}
+
+.flower_petal-1 {
+    border-radius: 50% 50% 50% / 80% 80% 20% 20%;
+    background-image: none;
+    background: var(--petal-color);
+    animation: open-flower 9s 1s backwards;
+}
+
+.flower_petal-2 {
+    transform: translateX(-50%) rotate(-30deg);
+}
+
+.flower_petal-3 {
+    transform: translateX(-50%) rotate(-60deg);
+}
+
+.flower_petal-4 {
+    transform: translateX(-50%) rotate(-90deg);
+}
+
+.flower_petal-5 {
+    transform: translateX(-50%) rotate(-120deg);
+}
+
+.flower_petal-6 {
+    transform: translateX(-50%) rotate(-150deg);
+}
+
+.flower_petal-7 {
+    transform: translateX(-50%) rotate(30deg);
+}
+
+.flower_petal-8 {
+    transform: translateX(-50%) rotate(60deg);
+}
+
+.flower_petal-9 {
+    transform: translateX(-50%) rotate(90deg);
+}
+
+.flower_petal-10 {
+    transform: translateX(-50%) rotate(120deg);
+}
+
+.flower_petal-11 {
+    transform: translateX(-50%) rotate(150deg);
+}
+
+.flower_petal-12 {
+    transform: translateX(-50%) rotate(180deg);
+}
+
+.flower_leaf {
+    position: absolute;
+    left: 60%;
+    bottom: 18vmin;
+    transform: translateX(-45%) rotate(80deg);
+    width: 7vmin;
+    height: 17vmin;
+    background: var(--leaf-color);
+    clip-path: none;
+    border-radius: 10vmin 2vmin 10vmin 2vmin;
+    transform-origin: center bottom;
+    animation-iteration-count: infinite ;
+}
+
+.flower_leaf-1 {
+    bottom: 18vmin;
+    transform: translateX(-45%) rotate(80deg);
+}
+
+.flower_leaf-2 {
+    bottom: 23vmin;
+    transform: translateX(-55%) rotate(-80deg);
+}
+
+.flower_light {
+    position: absolute;
+    bottom: 70vmin;
+    width: 1vmin;
+    height: 1vmin;
+    background-color: rgb(215, 52, 177);
+    border-radius: 50%;
+    filter: blur(0.2vmin);
+    animation: light-ans 4s linear infinite backwards;
+}
+
+.flower_light-1 {
+    left: -2vmin;
+    animation-delay: 1s;
+}
+
+.flower_light-2 {
+    left: 3vmin;
+    animation-delay: 0.5s;
+}
+
+.flower_light-3 {
+    left: -6vmin;
+    animation-delay: 0.3s;
+}
+
+.flower_light-4 {
+    left: 6vmin;
+    animation-delay: 0.9s;
+}
+
+.flower_light-5 {
+    left: -1vmin;
+    animation-delay: 1.5s;
+}
+
+.flower_light-6 {
+    left: -4vmin;
+    animation-delay: 3s;
+}
+
+.flower_light-7 {
+    left: 3vmin;
+    animation-delay: 2s;
+}
+
+.flower_light-8 {
+    left: -6vmin;
+    animation-delay: 3.5s;
+}
+
+.light {
+    position: absolute;
+    bottom: 0vmin;
+    width: 1vmin;
+    height: 1vmin;
+    background-color: rgb(255, 251, 0);
+    border-radius: 50%;
+    filter: blur(0.2vmin);
+    animation: light-ans-background 7s linear infinite backwards;
+}
+
+
+.light-1 {
+    left: 10vmin;
+    animation-delay: 1s;
+}
+
+.light-2 {
+    left: 20vmin;
+    animation-delay: 0.5s;
+}
+
+.light-3 {
+    left: 60vmin;
+    animation-delay: 0.3s;
+}
+
+.light-4 {
+    left: 80vmin;
+    animation-delay: 0.9s;
+}
+
+.light-5 {
+    left: 45vmin;
+    animation-delay: 1.5s;
+}
+
+.light-6 {
+    left: 10vmin;
+    animation-delay: 3s;
+}
+
+.light-7 {
+    left: 90vmax;
+    animation-delay: 2s;
+}
+
+.light-8 {
+    left: 60vmax;
+    animation-delay: 3.5s;
+}
+
+.light-9 {
+    left: 70vmax;
+    animation-delay: 2s;
+}
+
+.light-10 {
+    left: 95vmax;
+    animation-delay: 3.5s;
+}
+
+.light-11 {
+    left: 75vmax;
+    animation-delay: 3s;
+}
+
+.light-12 {
+    left: 85vmax;
+    animation-delay: 0.5s;
+}
+
+@keyframes open-flower-leaves {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) scale(0);
+    }
+}
+
+@keyframes open-flower {
+    0% {
+        transform: translateX(-50%) rotate(0);
+    }
+}
+
+@keyframes open-flower-middle {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) scale(0);
+    }
+}
+
+@keyframes light-ans {
+    0% {
+        opacity: 0;
+        transform: translateY(0vmin);
+    }
+
+    25% {
+        opacity: 1;
+        transform: translateY(-5vmin) translateX(-2vmin);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateY(-15vmin) translateX(2vmin);
+        filter: blur(0.2vmin);
+    }
+
+    75% {
+        transform: translateY(-20vmin) translateX(-2vmin);
+        filter: blur(0.2vmin);
+    }
+
+    100% {
+        transform: translateY(-30vmin);
+        opacity: 0;
+        filter: blur(1vmin);
+    }
+}
+
+@keyframes light-ans-background {
+    0% {
+        opacity: 0;
+        transform: translateY(0vmin);
+    }
+
+    25% {
+        opacity: 1;
+        transform: translateY(-10vmin) translateX(-2vmin);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateY(-20vmin) translateX(2vmin);
+        filter: blur(0.2vmin);
+    }
+
+    60% {
+        transform: translateY(-30vmin) translateX(-2vmin);
+        filter: blur(0.2vmin);
+    }
+
+    70% {
+        transform: translateY(-40vmin) translateX(2vmin);
+        filter: blur(0.2vmin);
+    }
+
+    80% {
+        transform: translateY(-50vmin) translateX(-2vmin);
+        filter: blur(0.2vmin);
+    }
+
+    100% {
+        transform: translateY(-60vmin);
+        opacity: 0;
+        filter: blur(1vmin);
+    }
+}
+
+
+@media (max-width: 758px) {
+    .carta {
+        max-width: 100%;
+        /* Cambiar el ancho máximo para que ocupe todo el ancho */
+        max-height: none;
+        /* Eliminar la altura máxima para que sea variable */
+        position: relative;
+        /* Cambiar la posición a relativa para que siga el flujo del documento */
+        margin: 0 20px 450px 20px;
+        /* Centrar horizontalmente y agregar margen inferior */
+    }
+
+    h1 {
+        color: black;
+        font-size: 15px;
+        font-weight: 400;
+        text-align: center;
+    }
+}
+
+  @import url('https://fonts.googleapis.com/css2?family=Mooli&display=swap');
+
+.backboton {
+    display: block;
+    width: 300px;
+    margin: 0 auto 900px 0px;
+    position: absolute;
+    top: 670px;
+    left: 516px;
+    background-color: #c3df5db3;
+    padding: 14px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.backboton a {
+
+    background-color: #c3df5ded;
+    /* Reemplaza NUEVO_COLOR con el color deseado */
+    text-decoration: none;
+    /* Esto elimina la subrayado predeterminado en los enlaces */
+    color: #000000;
+    /* Cambia el color del texto del enlace si es necesario */
+    padding: 5px 10px;
+    /* Añade un poco de espacio alrededor del enlace */
+    border-radius: 5px;
+    /* Puedes agregar bordes redondeados si lo deseas */
+    font-family: Mooli, sans-serif;
+    font-size: 19px;
+    text-align: center;
+}
+
+/*estilos para la imagen del lado izquierdo*/
+
+/* Estilos para la imagen flotante */
+.imagenflotante {
+    position: absolute;
+    left: 999px   ;
+    top: 100px;
+    transform: translateY(-50%);
+    width: 10px; 
+    height: 1px;/* Ajusta el ancho de la imagen según tus necesidades */
+    z-index: 99; /* Asegura que esté en la parte superior */
+    cursor: pointer;
+}
+
+.avisos{
+    position: absolute;
+    left: 935px;
+    top: 280px;
+    transform: translateY(-50%);
+    width: 10px; 
+    height: 1px;/* Ajusta el ancho de la imagen según tus necesidades */
+    z-index: 99; /* Asegura que esté en la parte superior */
+    cursor: pointer;
+}
+#avisoimg{
+    position: absolute;
+    left: 0px;
+    width: 100px;
+    height: 90px;
+}
+
+/* Estilos para el letrero */
+.letrero {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 20px;
+    z-index: 9998;
+    text-align: center;
+    border-radius: 30px;
+}
+
+/* Estilos para el enlace de cerrar */
+#cerrar {
+    cursor: pointer;
+    color: #ff4500;
+    text-decoration: underline;
+    
+}

@@ -1,0 +1,142 @@
+ 
+ @media screen and (max-width: 768px) {
+    /* Estilos para pantallas más pequeñas (tabletas, dispositivos móviles) */
+}
+/**{
+    border: 1px solid black;
+ }*/
+ .back {
+     position: fixed;
+     padding: 0;
+     margin: 0;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background: rgba(165, 218, 69, 0.849);
+     animation-name: backdiv;
+     animation-duration: 3500ms;
+     animation-iteration-count: infinite;
+ }
+
+ .contenedor {
+     position: relative;
+     width: 100%;
+     height: 100%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     overflow: hidden;
+ }
+
+ img {
+     width: 100%;
+     max-width: 200px;
+     /* Ajusta el tamaño máximo de la imagen según tus necesidades */
+     position: absolute;
+     top: 15%;
+     animation: zoom 5s alternate infinite;
+ }
+
+ @keyframes zoom {
+     0% {
+         transform: scale(1);
+     }
+
+     100% {
+         transform: scale(1.5);
+         /* Puedes ajustar el valor de escala según tus necesidades */
+     }
+ }
+
+ .heart {
+     position: absolute;
+     margin: auto;
+     top: 170px;
+     right: 0;
+     bottom: 0;
+     left: 0;
+     background-color: rgb(202, 35, 208);
+     height: 150px;
+     width: 150px;
+     transform: rotate(-45deg);
+     animation-name: beat;
+     animation-duration: 3500ms;
+     animation-iteration-count: infinite;
+ }
+
+ .heart:after {
+     background-color: rgb(183, 35, 95);
+     content: "";
+     border-radius: 50%;
+     position: absolute;
+     width: 150px;
+     height: 150px;
+     top: 0;
+     left: 80px;
+ }
+
+ .heart:before {
+     background-color: rgb(203, 10, 228);
+     content: "";
+     border-radius: 50%;
+     position: absolute;
+     width: 150px;
+     height: 150px;
+     top: -80px;
+     left: 0;
+ }
+
+ @keyframes backdiv {
+     50% {
+         background: #4813b0ae;
+     }
+ }
+
+ @keyframes beat {
+     0% {
+         transform: scale(1) rotate(-45deg);
+     }
+
+     50% {
+         transform: scale(0.6) rotate(-45deg);
+     }
+ }
+
+ .bday {
+     text-align: center;
+     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+     width: 100%;
+     font-size: 48px;
+     font-family: 'Nunito', sans-serif;
+     font-weight: 600;
+     color: #70bd2c;
+     margin: 20px auto;
+     padding: 15px;
+     background-color: #ccca49;
+ }
+
+ .miboton{
+    display: block;
+    margin-top: 100px;
+    padding: 10px 20px;
+    background-color: #4291ec;
+    color:#fff;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 15PX;
+    transition: background-color 0.3s ease;
+ }
+.miboton:hover{
+    background-color: #0056b3;
+}
+
+/*La letra del boton*/
+
+a{
+    direction: none;
+    color   : black;
+    font-weight: 20px;
+    text-decoration: none;
+}
